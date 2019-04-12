@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="###JavaScript数据类型概述  #####在JS中一共有六种数据类型  String 字符串(基本数据类型) Number 数值(基本数据类型) Boolean 布尔值(基本数据类型) Null 空值(基本数据类型) Symbol 符号(基本数据类型) Undefined 未定义(基本数据类型) Object 对象(引用数据类型)    ###字符串类型  String用于表示一个字符序">
+<meta name="description" content="JavaScript数据类型概述 #####在JS中一共有六种数据类型  String 字符串(基本数据类型) Number 数值(基本数据类型) Boolean 布尔值(基本数据类型) Null 空值(基本数据类型) Symbol 符号(基本数据类型) Undefined 未定义(基本数据类型) Object 对象(引用数据类型)    字符串类型 String用于表示一个字符序列，即字符串 字">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS的数据类型">
 <meta property="og:url" content="http://yoursite.com/2019/04/06/JS的数据类型/index.html">
 <meta property="og:site_name" content="Brazen&#39;Blog">
-<meta property="og:description" content="###JavaScript数据类型概述  #####在JS中一共有六种数据类型  String 字符串(基本数据类型) Number 数值(基本数据类型) Boolean 布尔值(基本数据类型) Null 空值(基本数据类型) Symbol 符号(基本数据类型) Undefined 未定义(基本数据类型) Object 对象(引用数据类型)    ###字符串类型  String用于表示一个字符序">
+<meta property="og:description" content="JavaScript数据类型概述 #####在JS中一共有六种数据类型  String 字符串(基本数据类型) Number 数值(基本数据类型) Boolean 布尔值(基本数据类型) Null 空值(基本数据类型) Symbol 符号(基本数据类型) Undefined 未定义(基本数据类型) Object 对象(引用数据类型)    字符串类型 String用于表示一个字符序列，即字符串 字">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-12T05:40:57.939Z">
+<meta property="og:updated_time" content="2019-04-12T08:55:05.662Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS的数据类型">
-<meta name="twitter:description" content="###JavaScript数据类型概述  #####在JS中一共有六种数据类型  String 字符串(基本数据类型) Number 数值(基本数据类型) Boolean 布尔值(基本数据类型) Null 空值(基本数据类型) Symbol 符号(基本数据类型) Undefined 未定义(基本数据类型) Object 对象(引用数据类型)    ###字符串类型  String用于表示一个字符序">
+<meta name="twitter:description" content="JavaScript数据类型概述 #####在JS中一共有六种数据类型  String 字符串(基本数据类型) Number 数值(基本数据类型) Boolean 布尔值(基本数据类型) Null 空值(基本数据类型) Symbol 符号(基本数据类型) Undefined 未定义(基本数据类型) Object 对象(引用数据类型)    字符串类型 String用于表示一个字符序列，即字符串 字">
 
 
 
@@ -299,8 +299,7 @@
       
 
       
-        <p>###JavaScript数据类型概述</p>
-<ul>
+        <h3 id="JavaScript数据类型概述"><a href="#JavaScript数据类型概述" class="headerlink" title="JavaScript数据类型概述"></a>JavaScript数据类型概述</h3><ul>
 <li><p>#####在JS中一共有六种数据类型</p>
 <ul>
 <li>String 字符串(基本数据类型)</li>
@@ -313,8 +312,7 @@
 </ul>
 </li>
 </ul>
-<p>###字符串类型</p>
-<ul>
+<h3 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h3><ul>
 <li>String用于表示一个字符序列，即字符串</li>
 <li><p>字符串需要使用 ’或“ 括起来</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str1 = &quot;hello&quot;;</span><br><span class="line">var str2 = `gz`;</span><br><span class="line">var str5 = `hello gz&quot;; // false</span><br><span class="line">console.log(typeof str1 ); // string</span><br><span class="line">console.log(typeof str2); // string</span><br></pre></td></tr></table></figure>
@@ -330,8 +328,7 @@
 </li>
 </ul>
 <hr>
-<p>###Number类型</p>
-<ul>
+<h3 id="Number类型"><a href="#Number类型" class="headerlink" title="Number类型"></a>Number类型</h3><ul>
 <li><p>在JS中所有的数值都是Number类型(整数和小数)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var num1= 123;</span><br><span class="line">var num2= 3.14;</span><br><span class="line">console.log(typeof num1); // number</span><br><span class="line">console.log(typeof num2); // number</span><br></pre></td></tr></table></figure>
 </li>
@@ -363,8 +360,7 @@
 </li>
 </ul>
 <hr>
-<p>###Boolean 布尔值</p>
-<ul>
+<h3 id="Boolean-布尔值"><a href="#Boolean-布尔值" class="headerlink" title="Boolean 布尔值"></a>Boolean 布尔值</h3><ul>
 <li>布尔型也被称为逻辑值类型或者真假值类型</li>
 <li><p>布尔型只能够取真（true）和假（false）两种数值</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var bool1 = true;</span><br><span class="line">var bool2 = false;</span><br><span class="line">console.log(typeof bool1); // boolean</span><br><span class="line">console.log(typeof bool2); // boolean</span><br></pre></td></tr></table></figure>
@@ -379,8 +375,7 @@
 </li>
 </ul>
 <hr>
-<p>###Null和Undefined</p>
-<ul>
+<h3 id="Null和Undefined"><a href="#Null和Undefined" class="headerlink" title="Null和Undefined"></a>Null和Undefined</h3><ul>
 <li><p>Undefined这是一种比较特殊的类型，表示变量未赋值，这种类型只有一种值就是undefined</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var num;</span><br><span class="line">console.log(num);  //结果是undefined</span><br></pre></td></tr></table></figure>
 </li>
@@ -477,8 +472,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -520,6 +524,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript数据类型概述"><span class="nav-number">1.</span> <span class="nav-text">JavaScript数据类型概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串类型"><span class="nav-number">2.</span> <span class="nav-text">字符串类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number类型"><span class="nav-number">3.</span> <span class="nav-text">Number类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Boolean-布尔值"><span class="nav-number">4.</span> <span class="nav-text">Boolean 布尔值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Null和Undefined"><span class="nav-number">5.</span> <span class="nav-text">Null和Undefined</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
