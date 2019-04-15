@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Brazen&#39;s blog">
 <meta property="og:description" content="一、需求如下 123456window.jQuery = ???window.$ = jQueryvar $div = $(&amp;apos;div&amp;apos;)$div.addClass(&amp;apos;red&amp;apos;) // 可将所有 div 的 class 添加一个 red$div.setText(&amp;apos;hi&amp;apos;) // 可将所有 div 的 textContent 变为 hi 题目">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-14T15:45:04.996Z">
+<meta property="og:updated_time" content="2019-04-15T07:57:51.636Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="08-模拟jQuery实现两个需求">
 <meta name="twitter:description" content="一、需求如下 123456window.jQuery = ???window.$ = jQueryvar $div = $(&amp;apos;div&amp;apos;)$div.addClass(&amp;apos;red&amp;apos;) // 可将所有 div 的 class 添加一个 red$div.setText(&amp;apos;hi&amp;apos;) // 可将所有 div 的 textContent 变为 hi 题目">
@@ -357,7 +357,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  665 字
+                  664 字
                 </span>
               
 
@@ -401,7 +401,7 @@
 <ul>
 <li>jQuery本质就是一个<strong>构造函数</strong>然后接受一个<strong>参数（这个参数可能是节点）</strong>并返回一个<strong>nodes对象</strong>。</li>
 <li><p>首先我们要能用var \$div = $(‘div’)获取到所有 div 。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">window.jQuery = function (nodeOrSelector)&#123;</span><br><span class="line">  var nodes = &#123;&#125;</span><br><span class="line">  if(nodeOrSelector === &apos;string&apos;)&#123;</span><br><span class="line">  var temp = document.querySeletorAll(nodeOrSelector)</span><br><span class="line">  for(let i = 0; i &lt; temp.length; i==)&#123;</span><br><span class="line">    nodes[i] = temp[i]</span><br><span class="line">    &#125;</span><br><span class="line">    nodes.length = temp.length</span><br><span class="line">  &#125;else if&#123;</span><br><span class="line">    if(nodeOrSelector instanceof Node)&#123;</span><br><span class="line">      nodes = &#123;o: nodeOrSelector,length = 1&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  return nodes</span><br><span class="line">  &#125;</span><br><span class="line">window.$ = jQuery</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">window.jQuery = function (nodeOrSelector)&#123;</span><br><span class="line">  var nodes = &#123;&#125;</span><br><span class="line">  if(typeof nodeOrSelector === &apos;string&apos;)&#123;</span><br><span class="line">  var temp = document.querySelectorAll(nodeOrSelector)</span><br><span class="line">  for(let i = 0; i &lt; temp.length; i++)&#123;</span><br><span class="line">    nodes[i] = temp[i]</span><br><span class="line">    &#125;</span><br><span class="line">    nodes.length = temp.length</span><br><span class="line">  &#125;else if(nodeOrSelector instanceof Node)&#123;</span><br><span class="line">      nodes = &#123;o: nodeOrSelector,length: 1&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  return nodes</span><br><span class="line">  &#125;</span><br><span class="line">window.$ = jQuery</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>此时，<code>var $div = $(&#39;div&#39;)</code>中的<code>$div</code> 就是上述代码中的 <code>nodes</code>，是一个 value 为所有 div 的<strong>伪数组</strong>。而且，nodes 需要 return 出去，才能被外面的代码调用。<br><code>$div.addClass(&#39;red&#39;)</code>可将所有 div 的 class 添加一个 red，<code>$div.setText(&#39;hi&#39;)</code>可将所有 div 的 textContent 变为 hi，我们给 nodes 添加两个 hash ，即，名为 addClass 和 setText 的函数</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">nodes.addClass = function()&#123;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line">nodes.setText = function()&#123;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
