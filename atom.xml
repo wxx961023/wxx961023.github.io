@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-04-15T07:59:34.481Z</updated>
+  <updated>2019-04-15T12:48:43.158Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>09-阐述内容、样式和行为分离</title>
+    <link href="http://yoursite.com/2019/04/15/09-%E9%98%90%E8%BF%B0%E5%86%85%E5%AE%B9%E3%80%81%E6%A0%B7%E5%BC%8F%E5%92%8C%E8%A1%8C%E4%B8%BA%E5%88%86%E7%A6%BB/"/>
+    <id>http://yoursite.com/2019/04/15/09-阐述内容、样式和行为分离/</id>
+    <published>2019-04-15T12:47:25.000Z</published>
+    <updated>2019-04-15T12:48:43.158Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>这是面试时候可能遇到的一道题</p></blockquote><hr><h1 id="一、先说观点"><a href="#一、先说观点" class="headerlink" title="一、先说观点"></a>一、先说观点</h1><ul><li>我认为内容、样式和行为分离，根据W3C标准来说，就是<code>html</code>负责内容，<code>CSS</code>负责样式，<code>JS</code>负责行为。</li></ul><h1 id="二、提供论据"><a href="#二、提供论据" class="headerlink" title="二、提供论据"></a>二、提供论据</h1><ul><li>类似这样的题目，如果正面不好回答的情况下，可以尝试反着回答，如人为什么要吃饭，答：如果人不吃饭就会饿死！</li></ul><hr><ol><li>假设<code>html</code>控制样式，如图<br><img src="https://upload-images.jianshu.io/upload_images/16648252-becae76640b37ef4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="html控制样式"></li></ol><ul><li>用<code>&lt;center&gt;</code>标签把文字居中，然后用<code>&lt;strong&gt;</code>加粗文字。</li><li>这样的写法把原本简单的逻辑结构变得复杂话，不利于代码的维护。</li><li>如果html也负责样式的话，使得内容的结构有很多无用的标签，有的标签表示内容，有的标签表示样式，这样我就很难区分内容的逻辑结构</li></ul><ol start="2"><li>假设用<code>CSS</code>写内容<br><img src="https://upload-images.jianshu.io/upload_images/16648252-98a7a7408ec3878a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="CSS写内容"></li></ol><ul><li>这样写会导致用户选取不到文字</li><li>而且JS取不到这里的文本内容</li><li>假如用CSS控制行为，那么CSS里面有很复杂的逻辑，会导致CSS很慢，最终影响页面加载速度</li></ul><ol start="3"><li>假设用JS控制样式</li></ol><ul><li>还没写<code>$div.hiden()</code>之前<br><img src="https://upload-images.jianshu.io/upload_images/16648252-a3f26447ef0a8b00.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></li><li>写了<code>$div.hiden()</code>之后，文字就被隐藏<br><img src="https://upload-images.jianshu.io/upload_images/16648252-ec35c2930e5755b4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></li><li>加上<code>$div.show()</code>文字又出现<br><img src="https://upload-images.jianshu.io/upload_images/16648252-6cc2baa7d18b112c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt><br>那么问题来了</li><li>在<code>$div.show()</code>之后，<code>div</code>的属性为<code>display: block;</code>，那么有可能在<code>$div.hiden()</code>之前,原本的<code>div</code>标签属性是<code>display: flex;</code>，经过<code>$div.show()</code>改变了属性的值为<code>block</code>，那么页面的flex布局就会<strong>全局炸掉</strong>。</li></ul><h2 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h2><hr><ul><li>为了以后改版时更方便，直接修改样式，而不动HTML的内容。更方便易于阅读样式和内容，便于项目的维护。</li><li>网页的内容直接暴露在搜索引擎面前，这样有利于搜索引擎抓取网页的内容。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;这是面试时候可能遇到的一道题&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;一、先说观点&quot;&gt;&lt;a href=&quot;#一、先说观点&quot; class=&quot;headerlink&quot; title=&quot;一、先说观点&quot;&gt;&lt;/a&gt;一、先说观点&lt;/h1&gt;&lt;ul
+      
+    
+    </summary>
+    
+    
+      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>08-模拟jQuery实现两个需求</title>
