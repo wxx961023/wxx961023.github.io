@@ -74,18 +74,20 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="Brazen's blog" type="application/atom+xml">
+
 
 
 
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Brazen&#39;Blog">
+<meta property="og:title" content="Brazen&#39;s blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Brazen&#39;Blog">
+<meta property="og:site_name" content="Brazen&#39;s blog">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Brazen&#39;Blog">
+<meta name="twitter:title" content="Brazen&#39;s blog">
 
 
 
@@ -121,7 +123,7 @@
 
 
 
-  <title>Brazen'Blog</title>
+  <title>Brazen's blog</title>
   
 
 
@@ -152,7 +154,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Brazen'Blog</span>
+        <span class="site-title">Brazen's blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -300,7 +302,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Brazen'Blog">
+      <meta itemprop="name" content="Brazen's blog">
     </span>
 
     
@@ -344,6 +346,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  665 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  2 分钟
+                </span>
+              
+            </div>
+          
 
           
 
@@ -362,32 +395,15 @@
       
         
           
-            <h2 id="一、需求如下"><a href="#一、需求如下" class="headerlink" title="一、需求如下"></a>一、需求如下</h2><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">window.jQuery = ???</span><br><span class="line">window.$ = jQuery</span><br><span class="line"></span><br><span class="line">var $div = $(&apos;div&apos;)</span><br><span class="line">$div.addClass(&apos;red&apos;) // 可将所有 div 的 class 添加一个 red</span><br><span class="line">$div.setText(&apos;hi&apos;) // 可将所有 div 的 textContent 变为 hi</span><br></pre></td></tr></table></figure>
-<p>题目中要求将所有 div 的 class 添加一个 red，以及将所有 div 的 textContent 变为 hi。</p>
-<h2 id="二、解决思路"><a href="#二、解决思路" class="headerlink" title="二、解决思路"></a>二、解决思路</h2><hr>
-<ul>
-<li>jQuery本质就是一个<strong>构造函数</strong>然后接受一个<strong>参数（这个参数可能是节点）</strong>并返回一个<strong>nodes对象</strong>。</li>
-<li><p>首先我们要能用var \$div = $(‘div’)获取到所有 div 。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">window.jQuery = function (nodeOrSelector)&#123;</span><br><span class="line">  var nodes = &#123;&#125;</span><br><span class="line">  if(nodeOrSelector === &apos;string&apos;)&#123;</span><br><span class="line">  var temp = document.querySeletorAll(nodeOrSelector)</span><br><span class="line">  for(let i = 0; i &lt; temp.length; i==)&#123;</span><br><span class="line">    nodes[i] = temp[i]</span><br><span class="line">    &#125;</span><br><span class="line">    nodes.length = temp.length</span><br><span class="line">  &#125;else if&#123;</span><br><span class="line">    if(nodeOrSelector instanceof Node)&#123;</span><br><span class="line">      nodes = &#123;o: nodeOrSelector,length = 1&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  return nodes</span><br><span class="line">  &#125;</span><br><span class="line">window.$ = jQuery</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>此时，<code>var $div = $(&#39;div&#39;)</code>中的<code>$div</code> 就是上述代码中的 <code>nodes</code>，是一个 value 为所有 div 的<strong>伪数组</strong>。而且，nodes 需要 return 出去，才能被外面的代码调用。<br><code>$div.addClass(&#39;red&#39;)</code>可将所有 div 的 class 添加一个 red，<code>$div.setText(&#39;hi&#39;)</code>可将所有 div 的 textContent 变为 hi，我们给 nodes 添加两个 hash ，即，名为 addClass 和 setText 的函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">nodes.addClass = function()&#123;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line">nodes.setText = function()&#123;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="三、完整代码"><a href="#三、完整代码" class="headerlink" title="三、完整代码"></a>三、完整代码</h3><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">window.jQuery = function (nodeOrSelector)&#123;</span><br><span class="line">  var nodes = &#123;&#125;</span><br><span class="line">  if(nodeOrSelector === &apos;string&apos;)&#123;</span><br><span class="line">  var temp = document.querySeletorAll(nodeOrSelector)</span><br><span class="line">  for(let i = 0; i &lt; temp.length; i++)&#123;</span><br><span class="line">    nodes[i] = temp[i]</span><br><span class="line">    &#125;</span><br><span class="line">    nodes.length = temp.length</span><br><span class="line">  &#125;else if(nodeOrSelector instanceof Node)&#123;</span><br><span class="line">      nodes = &#123;o: nodeOrSelector,length: 1&#125;;</span><br><span class="line">   &#125;</span><br><span class="line">  nodes.addClass = function(classes)&#123;</span><br><span class="line">    for(let i = 0; i &lt; nodes.length; i++)&#123;</span><br><span class="line">      nodes[i].classList.add(classes)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  nodes.setText = function(text)&#123;</span><br><span class="line">    for(let i = 0; i &lt; nodes.length; i++)&#123;</span><br><span class="line">    nodes[i].textContent  = text</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return nodes</span><br><span class="line">&#125;</span><br><span class="line">window.$ = jQuery</span><br><span class="line">var $div = $(&apos;div&apos;)</span><br><span class="line">$div.addClass(&apos;red&apos;) </span><br><span class="line">$div.setText(&apos;hi&apos;)</span><br></pre></td></tr></table></figure>
-<h3 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h3><hr>
-<ul>
-<li>在我看来jQuery就是将一个DOM对象重新包装成jQuery对象，这个jQuery对象中包含了许多DOM中不能轻松实现的方法（函数），可以省去很多复杂的代码。</li>
-<li>jQuery的基本设计思想和主要用法，就是”选择某个网页元素，然后对其进行某种操作”。</li>
-<li>使用jQuery的第一步，往往就是将一个选择表达式，放进构造函数jQuery()（简写为$），然后得到被选中的元素。</li>
-<li>首先，声明一个全局函数jQuery，函数通过传参数，通过判断参数的类型及参数是否为节点元素来获取对应的nodes，函数里写有addClass方法和setText方法。</li>
-<li>.addClass方法通过传参数（样式的className），遍历所有nodes并加上提供的class类</li>
-<li>.setText方法，把文本内容当作参数传递到函数中，遍历所有的nodes并通过textContent属性改变标签的文本内容</li>
-</ul>
-
           
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/14/08-模拟jQuery实现两个需求/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -443,7 +459,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Brazen'Blog">
+      <meta itemprop="name" content="Brazen's blog">
     </span>
 
     
@@ -487,6 +503,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  844 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  4 分钟
+                </span>
+              
+            </div>
+          
 
           
 
@@ -505,42 +552,15 @@
       
         
           
-            <p><img src="https://upload-images.jianshu.io/upload_images/16648252-7baf575499fc02d6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
-<h2 id="一、封装两个函数"><a href="#一、封装两个函数" class="headerlink" title="一、封装两个函数"></a>一、封装两个函数</h2><hr>
-<p>相关内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;li id = &quot;item1&quot;&gt;选项1&lt;/li&gt;</span><br><span class="line">  &lt;li id = &quot;item2&quot;&gt;选项2&lt;/li&gt;</span><br><span class="line">  &lt;li id = &quot;item3&quot;&gt;选项3&lt;/li&gt;</span><br><span class="line">  &lt;li id = &quot;item4&quot;&gt;选项4&lt;/li&gt;</span><br><span class="line">  &lt;li id = &quot;item5&quot;&gt;选项5&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure></p>
-<h3 id="1-需求：获取到一个节点的兄弟姐妹，并放到一个伪数组里。"><a href="#1-需求：获取到一个节点的兄弟姐妹，并放到一个伪数组里。" class="headerlink" title="1. 需求：获取到一个节点的兄弟姐妹，并放到一个伪数组里。"></a>1. 需求：获取到一个节点的兄弟姐妹，并放到一个伪数组里。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">document.body.nextElementSibling</span><br><span class="line">//获取节点的弟弟</span><br><span class="line">document.body.previousElementSibling</span><br><span class="line">//获取节点的哥哥</span><br></pre></td></tr></table></figure>
-<p>初步思路：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var allChildren = item3.parentNode.chiledren //获取节点的所有兄弟姐妹</span><br><span class="line">var array = &#123;length:0&#125; //创建一个空对象</span><br><span class="line">for(let i = 0; i &lt; alllChildren.length; i++)&#123; //遍历</span><br><span class="line">  if(allChildren[i] !== item3)&#123;</span><br><span class="line">    array[array.length] = allChildren[i]</span><br><span class="line">    array.length += 1</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(array) //&#123;0:li#itme1, 1:li#itme2, 2:li#itme4, 3:li#itme5, length: 4&#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>为什么<code>array[array.length]</code>中用<code>array.length</code>不用<code>i</code>，因为它中间有可能跳过一个，跳过之后序号就不一致</li>
-<li>为什么不用push？因为这是一个伪数组（伪数组就是哈希）。</li>
-</ul>
-<p>封装函数：<code>function 起个好用又好听的名字(){}</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function getSiblings(node)&#123; //外部输入一个节点 API</span><br><span class="line">  var allChildren = node.parentNode.chiledren //获取节点的所有兄弟姐妹</span><br><span class="line">  var array = &#123;length:0&#125; //创建一个空对象</span><br><span class="line">  for(let i = 0; i &lt; alllChildren.length; i++)&#123; //遍历</span><br><span class="line">    if(allChildren[i] !== node)&#123;</span><br><span class="line">      array[array.length] = allChildren[i]</span><br><span class="line">      array.length += 1</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">retuen array</span><br><span class="line">&#125;</span><br><span class="line">console.log(getSiblings(item3))  //&#123;0:li#itme1, 1:li#itme2, 2:li#itme4, 3:li#itme5, length: 4&#125;</span><br><span class="line">```  </span><br><span class="line">### 2. 需求：给节点添加`class`，既能`add`也能`remove`。</span><br><span class="line">初步思路：</span><br></pre></td></tr></table></figure></p>
-<p>item3.classList.add(‘a’)<br>item3.classList.add(‘b’)<br>item3.classList.add(‘c’)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">var classes = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</span><br><span class="line">classes.forEach((value) =&gt; item3.classList.add(value))</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var classes = &#123;&apos;a&apos;:ture, &apos;b&apos;:false, &apos;c&apos;:ture&#125;</span><br><span class="line">var value = classes[key]</span><br><span class="line">for(let key in classes)&#123;</span><br><span class="line">  if(value)&#123;</span><br><span class="line">    item3.classList.add(key)</span><br><span class="line">  &#125;else&#123;</span><br><span class="line">    item3.classList.remove(key)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>封装函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function addClass(node,classes)&#123; //classes有使用者提供</span><br><span class="line">  var value = classes[key]</span><br><span class="line">  for(let key in classes)&#123;</span><br><span class="line">    if(value)&#123;</span><br><span class="line">      node.classList.add(key)</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      node.classList.remove(key)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">用法： addClass（item3, &#123;&apos;a&apos;:ture, &apos;b&apos;:false, &apos;c&apos;:ture&#125;）</span><br></pre></td></tr></table></figure></p>
-<p>优化代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function addClass(node,classes)&#123;</span><br><span class="line">  var value = classes[key]</span><br><span class="line">  for(let key in classes)&#123;</span><br><span class="line">    var methodName = value ? &apos;add&apos;:&apos;remove&apos;</span><br><span class="line">    node.Classlist[methodName](key)</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>优化守则：</p>
-<ul>
-<li>如果出现类似的代码，就存在优化的可能。</li>
-</ul>
-<h3 id="3-需求：有什么办法让别人知道这两个API有关联性，因为这两个API都是在操作节点"><a href="#3-需求：有什么办法让别人知道这两个API有关联性，因为这两个API都是在操作节点" class="headerlink" title="3. 需求：有什么办法让别人知道这两个API有关联性，因为这两个API都是在操作节点"></a>3. 需求：有什么办法让别人知道这两个API有关联性，因为这两个API都是在操作节点</h3><p>命名空间：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">window.ffdom = &#123;&#125;</span><br><span class="line">ffdom.getSibilings = getSiblings</span><br><span class="line">ffdom.addClass = addClass</span><br><span class="line"></span><br><span class="line">ffdom.getSibilings(item3)</span><br><span class="line">ffdom.addClass（item3, &#123;&apos;a&apos;:ture, &apos;b&apos;:false, &apos;c&apos;:ture&#125;）</span><br></pre></td></tr></table></figure></p>
-<p>不命名空间的缺点：</p>
-<ul>
-<li>别人不知道你的库叫什么</li>
-<li>不知不觉把全局变量覆盖</li>
-</ul>
-<h3 id="4-需求：我想写成item-getSibilings"><a href="#4-需求：我想写成item-getSibilings" class="headerlink" title="4. 需求：我想写成item.getSibilings"></a>4. 需求：我想写成<code>item.getSibilings</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Node.prototype.getSibilings = function()&#123;</span><br><span class="line">  var allChildren = this.parentNode.chiledren </span><br><span class="line">  var array = &#123;length:0&#125; </span><br><span class="line">  for(let i = 0; i &lt; alllChildren.length; i++)&#123;</span><br><span class="line">    if(allChildren[i] !== this)&#123;</span><br><span class="line">      array[array.length] = allChildren[i]</span><br><span class="line">      array.length += 1</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  retuen array</span><br><span class="line">&#125;</span><br><span class="line">Node.prototype.addClass = function(classes)&#123;</span><br><span class="line">  var value = classes[key]</span><br><span class="line">  for(let key in classes)&#123;</span><br><span class="line">    var methodName = value ? &apos;add&apos;:&apos;remove&apos;</span><br><span class="line">    this.Classlist[methodName](key)</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br><span class="line">console.log(item3.getSiblings（）) //&#123;0:li#itme1, 1:li#itme2, 2:li#itme4, 3:li#itme5, length: 4&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>因为我们篡改了所有Node的公有属性，添加了一个getSiblings的方法。</li>
-<li><code>this</code>就是<code>.</code>前面的东西（这里就是item3）</li>
-<li><p>调用call </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">item3.getSiblings.call（item3）</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>我自己写一个更好的Node2版本，用新的版本去调用第一个版本</p>
-</li>
-</ul>
-
           
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/13/07-JS初试封装函数/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -596,7 +616,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Brazen'Blog">
+      <meta itemprop="name" content="Brazen's blog">
     </span>
 
     
@@ -640,6 +660,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  803 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  3 分钟
+                </span>
+              
+            </div>
+          
 
           
 
@@ -658,96 +709,15 @@
       
         
           
-            <h3 id="JavaScript数据类型概述"><a href="#JavaScript数据类型概述" class="headerlink" title="JavaScript数据类型概述"></a>JavaScript数据类型概述</h3><ul>
-<li><h5 id="在JS中一共有六种数据类型"><a href="#在JS中一共有六种数据类型" class="headerlink" title="在JS中一共有六种数据类型"></a>在JS中一共有六种数据类型</h5><ul>
-<li>String 字符串(基本数据类型)</li>
-<li>Number 数值(基本数据类型)</li>
-<li>Boolean 布尔值(基本数据类型)</li>
-<li>Null 空值(基本数据类型)</li>
-<li>Symbol 符号(基本数据类型)</li>
-<li>Undefined 未定义(基本数据类型)</li>
-<li>Object 对象(引用数据类型)</li>
-</ul>
-</li>
-</ul>
-<h3 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h3><ul>
-<li>String用于表示一个字符序列，即字符串</li>
-<li><p>字符串需要使用 ’或“ 括起来</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str1 = &quot;hello&quot;;</span><br><span class="line">var str2 = `gz`;</span><br><span class="line">var str5 = `hello gz&quot;; // false</span><br><span class="line">console.log(typeof str1 ); // string</span><br><span class="line">console.log(typeof str2); // string</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>相同引号不能嵌套，不同引号可以嵌套</p>
-<ul>
-<li>双引号不能放双引号，单引号不能放单引号<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var str3 = &quot;hello &quot;gz&quot;&quot;; //  false</span><br><span class="line">var str4 = `hello `gz``; //  false</span><br><span class="line">var str5 = &quot;hello &apos;gz&apos;&quot;; // true</span><br><span class="line">var str6 = `hello &quot;gz&quot;`;// true</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>给变量加上引号, 那么变量将变为一个常量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var num = 110;</span><br><span class="line">console.log(num); // 输出变量中的值</span><br><span class="line">console.log(&quot;num&quot;); // 输出常量num</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<h3 id="Number类型"><a href="#Number类型" class="headerlink" title="Number类型"></a>Number类型</h3><ul>
-<li><p>在JS中所有的数值都是Number类型(整数和小数)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var num1= 123;</span><br><span class="line">var num2= 3.14;</span><br><span class="line">console.log(typeof num1); // number</span><br><span class="line">console.log(typeof num2); // number</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>由于内存的限制，ECMAScript 并不能保存世界上所有的数值</p>
-<ul>
-<li>最大值：Number.MAX_VALUE<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(Number.MAX_VALUE);  // 1.7976931348623157e+308</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>最小值：Number.MIN_VALUE</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(Number.MIN_VALUE);  // 5e-324</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>无穷大：Infinity, 如果超过了最大值就会返回该值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(Number.MAX_VALUE + Number.MAX_VALUE); // Infinity</span><br></pre></td></tr></table></figure>
-<p>无穷小：-Infinity, 如果超过了最小值就会返回该值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(typeof Infinity); // number</span><br><span class="line">console.log(typeof -Infinity); // number</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>NaN 非法数字（Not A Number）,JS中当对数值进行计算时没有结果返回，则返回NaN</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var num3 = NaN;</span><br><span class="line">console.log(typeof num3); // number</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Number类型注意点</p>
-<ul>
-<li>JS中整数的运算可以保证精确的结果<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var sum1 = 10 + 20;</span><br><span class="line">console.log(sum1); // 30</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>在JS中浮点数的运算可能得到一个不精确的结果</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var sum1 = 10.1 + 21.1;</span><br><span class="line">console.log(sum1); // 31.200000000000003</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<h3 id="Boolean-布尔值"><a href="#Boolean-布尔值" class="headerlink" title="Boolean 布尔值"></a>Boolean 布尔值</h3><ul>
-<li>布尔型也被称为逻辑值类型或者真假值类型</li>
-<li><p>布尔型只能够取真（true）和假（false）两种数值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var bool1 = true;</span><br><span class="line">var bool2 = false;</span><br><span class="line">console.log(typeof bool1); // boolean</span><br><span class="line">console.log(typeof bool2); // boolean</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>虽然Boolean 类型的字面值只有两个，但 ECMAScript 中所有类型的值都有与这两个 Boolean 值等价的值</p>
-<ul>
-<li>任何非零数值都是true, 包括正负无穷大, 只有0和NaN是false</li>
-<li>任何非空字符串都是true, 只有空字符串是false</li>
-<li>任何对象都是true, 只有null和undefined是false<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var bool3 = Boolean(0);</span><br><span class="line">console.log(bool3); // false</span><br><span class="line">var bool4 = Boolean(1);</span><br><span class="line">console.log(bool4); // true</span><br><span class="line">var bool5 = Boolean(-1);</span><br><span class="line">console.log(bool4); // true</span><br><span class="line">var bool6 = Boolean(Infinity);</span><br><span class="line">console.log(bool4); // true</span><br><span class="line">var bool7 = Boolean(-Infinity);</span><br><span class="line">console.log(bool4); // true</span><br><span class="line">var bool8 = Boolean(NaN);</span><br><span class="line">console.log(bool8); // false</span><br><span class="line">var bool9 = Boolean(undefined);</span><br><span class="line">console.log(bool8); // false</span><br><span class="line">var bool10 = Boolean(null);</span><br><span class="line">console.log(bool8); // false</span><br><span class="line">var bool11 = Boolean(&quot;&quot;);</span><br><span class="line">console.log(bool8); // false</span><br><span class="line">var bool12 = Boolean(&quot;abc&quot;);</span><br><span class="line">console.log(bool12); // true</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="Null和Undefined"><a href="#Null和Undefined" class="headerlink" title="Null和Undefined"></a>Null和Undefined</h3><ul>
-<li><p>Undefined这是一种比较特殊的类型，表示变量未赋值，这种类型只有一种值就是undefined</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var num;</span><br><span class="line">console.log(num);  //结果是undefined</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>undefined是Undefined类型的字面量</p>
-<ul>
-<li>前者undefined和10, “abc”一样是一个常量</li>
-<li>后者Undefined和Number,Boolean一样是一个数据类型</li>
-<li>需要注意的是typeof对没有初始化和没有声明的变量都会返回undefined。<br><code>`</code><br>var value1 = undefined;<br>console.log(typeof value); //结果是undefined</li>
-</ul>
-</li>
-</ul>
-<p>var value2;<br>console.log(typeof  value2); //结果是undefined</p>
-
           
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/06/JS的数据类型/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -803,7 +773,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Brazen'Blog">
+      <meta itemprop="name" content="Brazen's blog">
     </span>
 
     
@@ -847,6 +817,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  4 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1 分钟
+                </span>
+              
+            </div>
+          
 
           
 
@@ -865,8 +866,15 @@
       
         
           
-            <h1 id="哈哈哈哈"><a href="#哈哈哈哈" class="headerlink" title="哈哈哈哈"></a>哈哈哈哈</h1>
           
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/06/开博大吉/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -922,7 +930,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Brazen'Blog">
+      <meta itemprop="name" content="Brazen's blog">
     </span>
 
     
@@ -966,6 +974,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  73 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1 分钟
+                </span>
+              
+            </div>
+          
 
           
 
@@ -984,17 +1023,15 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
           
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/04/06/hello-world/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1089,7 +1126,30 @@
           </nav>
 
           
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/wxx961023" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="764146802@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
           
 
           
