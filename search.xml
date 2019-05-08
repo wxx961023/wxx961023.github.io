@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[text]]></title>
+    <url>%2F2019%2F05%2F09%2Ftext%2F</url>
+    <content type="text"><![CDATA[测试]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Vue重构有赞商城]]></title>
     <url>%2F2019%2F05%2F09%2FVue%E9%87%8D%E6%9E%84%E6%9C%89%E8%B5%9E%E5%95%86%E5%9F%8E%2F</url>
     <content type="text"><![CDATA[一、记录我踩到的坑（1）、未绑定数据:(踩坑次数：2) 二、课程的重点部分（1）、左侧导航栏切换 采用到class和style的绑定问题 点击进行切换，就是绑定事件@click=&quot;&quot;绑定原生事件，做一个识别和请求，对后台的数据做请求，做请求就是传id,请求二级分类。把一级分类id传到二级分类，根据id进行相应的请求。（点击一级获取二级）相对应的需要在JS中把方法getSublist()定义出来我们在浏览器中看下id是否传过来了我们可以看到点击4个选择分别传的id为：800、810、817、811 把数组的下标传进来，进行切换用v-show=&quot;topIndex ===0&quot; （2）、左侧导航栏焦点状态的处理，其实就是一个类加载的问题我们在这就已经写死了状态为active，我们需要把这里删除，重新绑定 （3）、商品价格的处理，用过滤器html代码：1&lt;div class=&quot;price&quot;&gt;￥&#123;&#123;list.price | numFilter&#125;&#125;&lt;/div&gt; js代码：12345filters:&#123; numFilter(price)&#123; return price.toFixed(2) &#125;&#125; 注意：必须是Number类型数据才能使用toFixed() 方法，但是vue中获取的数据通常为String格式，所以这里用Number处理一下数据。]]></content>
