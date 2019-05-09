@@ -81,16 +81,21 @@
 
 
 
-<meta name="description" content="一、记录我踩到的坑（1）、未绑定数据:(踩坑次数：2) 二、课程的重点部分（1）、左侧导航栏切换  采用到class和style的绑定问题 点击进行切换，就是绑定事件@click=&amp;quot;&amp;quot;绑定原生事件，做一个识别和请求，对后台的数据做请求，做请求就是传id,请求二级分类。把一级分类id传到二级分类，根据id进行相应的请求。（点击一级获取二级）相对应的需要在JS中把方法getSubl">
+<meta name="description" content="一、记录我踩到的坑（1）、未绑定数据:(踩坑次数：2) （2）、如何实现页面的跳转例如：我点击水果   首先绑定2.声明函数，传参数3.对象的解构赋值  二、课程的重点部分第二课（1）、左侧导航栏切换  采用到class和style的绑定问题 点击进行切换，就是绑定事件@click=&amp;quot;&amp;quot;绑定原生事件，做一个识别和请求，对后台的数据做请求，做请求就是传id,请求二级分类。把一级分">
 <meta name="keywords" content="demo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue重构有赞商城">
 <meta property="og:url" content="http://yoursite.com/2019/05/09/Vue重构有赞商城/index.html">
 <meta property="og:site_name" content="Brazen&#39;s blog">
-<meta property="og:description" content="一、记录我踩到的坑（1）、未绑定数据:(踩坑次数：2) 二、课程的重点部分（1）、左侧导航栏切换  采用到class和style的绑定问题 点击进行切换，就是绑定事件@click=&amp;quot;&amp;quot;绑定原生事件，做一个识别和请求，对后台的数据做请求，做请求就是传id,请求二级分类。把一级分类id传到二级分类，根据id进行相应的请求。（点击一级获取二级）相对应的需要在JS中把方法getSubl">
+<meta property="og:description" content="一、记录我踩到的坑（1）、未绑定数据:(踩坑次数：2) （2）、如何实现页面的跳转例如：我点击水果   首先绑定2.声明函数，传参数3.对象的解构赋值  二、课程的重点部分第二课（1）、左侧导航栏切换  采用到class和style的绑定问题 点击进行切换，就是绑定事件@click=&amp;quot;&amp;quot;绑定原生事件，做一个识别和请求，对后台的数据做请求，做请求就是传id,请求二级分类。把一级分">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16648252-b2ea6b80c7e3ff8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16648252-a185599a6e4fb997.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16648252-e229bad446df6d68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16648252-ccd6f00a0a052364.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16648252-e79788c67716156c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16648252-b4362bbca856ef8e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16648252-8b75aad6e42c2a8c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16648252-fe7b9de22ebafbbb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16648252-75eca4de60a601f9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16648252-48d18fe1f436ea36.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -104,10 +109,18 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16648252-e30810759c62f7e9.gif?imageMogr2/auto-orient/strip">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16648252-46efd7c6373f11c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16648252-f544be9919c36619.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-05-08T16:23:29.459Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16648252-7831a8b45f79315c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16648252-aeaa4c25c9dd75b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16648252-c716564aed219589.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16648252-08bd6ba40cff8415.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16648252-0741eb256a861610.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16648252-a90401b6c68f1fc4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16648252-16456ab2c822ba66.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16648252-f066ad6541321c42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-05-09T14:16:57.806Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue重构有赞商城">
-<meta name="twitter:description" content="一、记录我踩到的坑（1）、未绑定数据:(踩坑次数：2) 二、课程的重点部分（1）、左侧导航栏切换  采用到class和style的绑定问题 点击进行切换，就是绑定事件@click=&amp;quot;&amp;quot;绑定原生事件，做一个识别和请求，对后台的数据做请求，做请求就是传id,请求二级分类。把一级分类id传到二级分类，根据id进行相应的请求。（点击一级获取二级）相对应的需要在JS中把方法getSubl">
+<meta name="twitter:description" content="一、记录我踩到的坑（1）、未绑定数据:(踩坑次数：2) （2）、如何实现页面的跳转例如：我点击水果   首先绑定2.声明函数，传参数3.对象的解构赋值  二、课程的重点部分第二课（1）、左侧导航栏切换  采用到class和style的绑定问题 点击进行切换，就是绑定事件@click=&amp;quot;&amp;quot;绑定原生事件，做一个识别和请求，对后台的数据做请求，做请求就是传id,请求二级分类。把一级分">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/16648252-b2ea6b80c7e3ff8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -374,7 +387,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  339 字
+                  610 字
                 </span>
               
 
@@ -390,7 +403,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1 分钟
+                  2 分钟
                 </span>
               
             </div>
@@ -412,7 +425,12 @@
 
       
         <h2 id="一、记录我踩到的坑"><a href="#一、记录我踩到的坑" class="headerlink" title="一、记录我踩到的坑"></a>一、记录我踩到的坑</h2><h3 id="（1）、未绑定数据-踩坑次数：2"><a href="#（1）、未绑定数据-踩坑次数：2" class="headerlink" title="（1）、未绑定数据:(踩坑次数：2)"></a>（1）、未绑定数据<code>:</code>(踩坑次数：2)</h3><p><img src="https://upload-images.jianshu.io/upload_images/16648252-b2ea6b80c7e3ff8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt><br><img src="https://upload-images.jianshu.io/upload_images/16648252-a185599a6e4fb997.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
-<h2 id="二、课程的重点部分"><a href="#二、课程的重点部分" class="headerlink" title="二、课程的重点部分"></a>二、课程的重点部分</h2><h3 id="（1）、左侧导航栏切换"><a href="#（1）、左侧导航栏切换" class="headerlink" title="（1）、左侧导航栏切换"></a>（1）、左侧导航栏切换</h3><p><img src="https://upload-images.jianshu.io/upload_images/16648252-fe7b9de22ebafbbb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<h3 id="（2）、如何实现页面的跳转"><a href="#（2）、如何实现页面的跳转" class="headerlink" title="（2）、如何实现页面的跳转"></a>（2）、如何实现页面的跳转</h3><p>例如：我点击<strong>水果</strong><br><img src="https://upload-images.jianshu.io/upload_images/16648252-e229bad446df6d68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/16648252-ccd6f00a0a052364.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<ol>
+<li>首先绑定<br><img src="https://upload-images.jianshu.io/upload_images/16648252-e79788c67716156c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt><br>2.声明函数，传参数<br><img src="https://upload-images.jianshu.io/upload_images/16648252-b4362bbca856ef8e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt><br>3.对象的解构赋值<br><img src="https://upload-images.jianshu.io/upload_images/16648252-8b75aad6e42c2a8c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></li>
+</ol>
+<h2 id="二、课程的重点部分"><a href="#二、课程的重点部分" class="headerlink" title="二、课程的重点部分"></a>二、课程的重点部分</h2><h3 id="第二课"><a href="#第二课" class="headerlink" title="第二课"></a>第二课</h3><h4 id="（1）、左侧导航栏切换"><a href="#（1）、左侧导航栏切换" class="headerlink" title="（1）、左侧导航栏切换"></a>（1）、左侧导航栏切换</h4><p><img src="https://upload-images.jianshu.io/upload_images/16648252-fe7b9de22ebafbbb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
 <ul>
 <li>采用到<code>class</code>和<code>style</code>的绑定问题</li>
 <li>点击进行切换，就是绑定事件<code>@click=&quot;&quot;</code>绑定原生事件，做一个识别和请求，对后台的数据做请求，做请求就是传<code>id</code>,请求二级分类。把一级分类<code>id</code>传到二级分类，根据<code>id</code>进行相应的请求。（点击一级获取二级）<br><img src="https://upload-images.jianshu.io/upload_images/16648252-75eca4de60a601f9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt><br>相对应的需要在JS中把方法<code>getSublist()</code>定义出来<br><img src="https://upload-images.jianshu.io/upload_images/16648252-48d18fe1f436ea36.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt><br>我们在浏览器中看下id是否传过来了<br><img src="https://upload-images.jianshu.io/upload_images/16648252-08b519e9e2153d25.gif?imageMogr2/auto-orient/strip" alt><br>我们可以看到点击4个选择分别传的<code>id</code>为：800、810、817、811</li>
@@ -421,11 +439,26 @@
 <p>把数组的下标传进来，进行切换用<code>v-show=&quot;topIndex ===0&quot;</code><br><img src="https://upload-images.jianshu.io/upload_images/16648252-d53bc56c63aa7840.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/16648252-2eb0769fb00d7195.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/16648252-d5becee42965a468.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt><br><img src="https://upload-images.jianshu.io/upload_images/16648252-14c60540bd068cff.gif?imageMogr2/auto-orient/strip" alt="实现切换功能.gif"></p>
-<h3 id="（2）、左侧导航栏焦点状态的处理，其实就是一个类加载的问题"><a href="#（2）、左侧导航栏焦点状态的处理，其实就是一个类加载的问题" class="headerlink" title="（2）、左侧导航栏焦点状态的处理，其实就是一个类加载的问题"></a>（2）、左侧导航栏焦点状态的处理，其实就是一个类加载的问题</h3><p><img src="https://upload-images.jianshu.io/upload_images/16648252-4b9883436b76a089.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt><br>我们在这就已经写死了状态为active，我们需要把这里删除，重新绑定<br><img src="https://upload-images.jianshu.io/upload_images/16648252-a1a5774862685073.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt><br><img src="https://upload-images.jianshu.io/upload_images/16648252-e30810759c62f7e9.gif?imageMogr2/auto-orient/strip" alt></p>
-<h3 id="（3）、商品价格的处理，用过滤器"><a href="#（3）、商品价格的处理，用过滤器" class="headerlink" title="（3）、商品价格的处理，用过滤器"></a>（3）、商品价格的处理，用过滤器</h3><p><img src="https://upload-images.jianshu.io/upload_images/16648252-46efd7c6373f11c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt><br>html代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;price&quot;&gt;￥&#123;&#123;list.price | numFilter&#125;&#125;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="（2）、左侧导航栏焦点状态的处理，其实就是一个类加载的问题"><a href="#（2）、左侧导航栏焦点状态的处理，其实就是一个类加载的问题" class="headerlink" title="（2）、左侧导航栏焦点状态的处理，其实就是一个类加载的问题"></a>（2）、左侧导航栏焦点状态的处理，其实就是一个类加载的问题</h4><p><img src="https://upload-images.jianshu.io/upload_images/16648252-4b9883436b76a089.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt><br>我们在这就已经写死了状态为active，我们需要把这里删除，重新绑定<br><img src="https://upload-images.jianshu.io/upload_images/16648252-a1a5774862685073.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt><br><img src="https://upload-images.jianshu.io/upload_images/16648252-e30810759c62f7e9.gif?imageMogr2/auto-orient/strip" alt></p>
+<h4 id="（3）、商品价格的处理，用过滤器"><a href="#（3）、商品价格的处理，用过滤器" class="headerlink" title="（3）、商品价格的处理，用过滤器"></a>（3）、商品价格的处理，用过滤器</h4><p><img src="https://upload-images.jianshu.io/upload_images/16648252-46efd7c6373f11c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt><br>html代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;price&quot;&gt;￥&#123;&#123;list.price | numFilter&#125;&#125;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
 <p>js代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">filters:&#123;</span><br><span class="line">    numFilter(price)&#123;</span><br><span class="line">        return price.toFixed(2)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/16648252-f544be9919c36619.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
 <p>注意：必须是<strong>Number</strong>类型数据才能使用toFixed() 方法，但是vue中获取的数据通常为String格式，所以这里用Number处理一下数据。</p>
+<hr>
+<h3 id="第三课"><a href="#第三课" class="headerlink" title="第三课"></a>第三课</h3><p>####（1）、现在处于分类页面，下面图标激活状态不对应<br><img src="https://upload-images.jianshu.io/upload_images/16648252-7831a8b45f79315c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<h3 id="（2）、拓展知识"><a href="#（2）、拓展知识" class="headerlink" title="（2）、拓展知识"></a>（2）、拓展知识</h3><p>（2.1）单Vue文件<br><img src="https://upload-images.jianshu.io/upload_images/16648252-aeaa4c25c9dd75b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<ul>
+<li>对于单Vue文件，关于<code>data</code>的配置必须是一个方法，在方法内部返回一个对象</li>
+<li>你一个单Vue文件可能会在页面上，可能在多处使用同一个单Vue文件,这种情况下，那么多个地方的单Vue文件会共享同一处数据，为了保证每一个组件的数据源的唯一性，就这么处理</li>
+</ul>
+<p>（2.2）引入qs模块<br><img src="https://upload-images.jianshu.io/upload_images/16648252-c716564aed219589.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt><br>加载进来<br><img src="https://upload-images.jianshu.io/upload_images/16648252-08bd6ba40cff8415.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt><br><strong>接下去的内容看开头页面如何跳转</strong></p>
+<hr>
+<h3 id="（3）、如何实现toTOP的小功能，当滑动页面一定距离出现"><a href="#（3）、如何实现toTOP的小功能，当滑动页面一定距离出现" class="headerlink" title="（3）、如何实现toTOP的小功能，当滑动页面一定距离出现"></a>（3）、如何实现toTOP的小功能，当滑动页面一定距离出现</h3><p><img src="https://upload-images.jianshu.io/upload_images/16648252-0741eb256a861610.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
+<ul>
+<li>绑定最外面的容器标签，绑定的时间是<code>@touchmove=&quot;move&quot;</code><br><img src="https://upload-images.jianshu.io/upload_images/16648252-a90401b6c68f1fc4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></li>
+<li>声明函数作用<br><img src="https://upload-images.jianshu.io/upload_images/16648252-16456ab2c822ba66.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt><br>这里不要写<code>document.body.scrollTop</code></li>
+<li>绑定内容，用<code>v-show</code>，添加事件<code>@toTop</code><br><img src="https://upload-images.jianshu.io/upload_images/16648252-f066ad6541321c42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></li>
+</ul>
 
       
     </div>
@@ -465,10 +498,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/09/text/" rel="prev" title="text">
-                text <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -547,7 +576,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -616,7 +645,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、记录我踩到的坑"><span class="nav-number">1.</span> <span class="nav-text">一、记录我踩到的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（1）、未绑定数据-踩坑次数：2"><span class="nav-number">1.1.</span> <span class="nav-text">（1）、未绑定数据:(踩坑次数：2)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、课程的重点部分"><span class="nav-number">2.</span> <span class="nav-text">二、课程的重点部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（1）、左侧导航栏切换"><span class="nav-number">2.1.</span> <span class="nav-text">（1）、左侧导航栏切换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（2）、左侧导航栏焦点状态的处理，其实就是一个类加载的问题"><span class="nav-number">2.2.</span> <span class="nav-text">（2）、左侧导航栏焦点状态的处理，其实就是一个类加载的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（3）、商品价格的处理，用过滤器"><span class="nav-number">2.3.</span> <span class="nav-text">（3）、商品价格的处理，用过滤器</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、记录我踩到的坑"><span class="nav-number">1.</span> <span class="nav-text">一、记录我踩到的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（1）、未绑定数据-踩坑次数：2"><span class="nav-number">1.1.</span> <span class="nav-text">（1）、未绑定数据:(踩坑次数：2)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（2）、如何实现页面的跳转"><span class="nav-number">1.2.</span> <span class="nav-text">（2）、如何实现页面的跳转</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、课程的重点部分"><span class="nav-number">2.</span> <span class="nav-text">二、课程的重点部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第二课"><span class="nav-number">2.1.</span> <span class="nav-text">第二课</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（1）、左侧导航栏切换"><span class="nav-number">2.1.1.</span> <span class="nav-text">（1）、左侧导航栏切换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（2）、左侧导航栏焦点状态的处理，其实就是一个类加载的问题"><span class="nav-number">2.1.2.</span> <span class="nav-text">（2）、左侧导航栏焦点状态的处理，其实就是一个类加载的问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（3）、商品价格的处理，用过滤器"><span class="nav-number">2.1.3.</span> <span class="nav-text">（3）、商品价格的处理，用过滤器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三课"><span class="nav-number">2.2.</span> <span class="nav-text">第三课</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（2）、拓展知识"><span class="nav-number">2.3.</span> <span class="nav-text">（2）、拓展知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（3）、如何实现toTOP的小功能，当滑动页面一定距离出现"><span class="nav-number">2.4.</span> <span class="nav-text">（3）、如何实现toTOP的小功能，当滑动页面一定距离出现</span></a></li></ol></li></ol></div>
             
 
           </div>
