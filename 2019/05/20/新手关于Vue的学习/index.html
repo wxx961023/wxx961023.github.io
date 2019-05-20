@@ -81,19 +81,17 @@
 
 
 
-<meta name="description" content="一、封装两个函数 相关内容：1234567&amp;lt;ul&amp;gt;  &amp;lt;li id = &amp;quot;item1&amp;quot;&amp;gt;选项1&amp;lt;/li&amp;gt;  &amp;lt;li id = &amp;quot;item2&amp;quot;&amp;gt;选项2&amp;lt;/li&amp;gt;  &amp;lt;li id = &amp;quot;item3&amp;quot;&amp;gt;选项3&amp;lt;/li&amp;gt;  &amp;lt;li id = &amp;quot;i">
+<meta name="description" content="一、Vue中组件extend和mixin的使用场景？  前者是用来扩展的，简单点来讲是来做加法。后者是混合，通俗来说就是用来做组合。 当你需要在某一个场景内要使用一个新功能，该新功能只是在某组件上添加一些新的逻辑新功能即可，选择用前者。 如果在某一场景，你如果需要的组件可以由已有的小组件构成可以考虑后者。  二、vue $mount()  Vue 的$mount()为手动挂载，在项目中可用于延时挂">
 <meta property="og:type" content="article">
-<meta property="og:title" content="07-JS初试封装函数">
-<meta property="og:url" content="http://yoursite.com/2019/04/13/07-JS初试封装函数/index.html">
+<meta property="og:title" content="新手关于Vue的学习">
+<meta property="og:url" content="http://yoursite.com/2019/05/20/新手关于Vue的学习/index.html">
 <meta property="og:site_name" content="Brazen&#39;s blog">
-<meta property="og:description" content="一、封装两个函数 相关内容：1234567&amp;lt;ul&amp;gt;  &amp;lt;li id = &amp;quot;item1&amp;quot;&amp;gt;选项1&amp;lt;/li&amp;gt;  &amp;lt;li id = &amp;quot;item2&amp;quot;&amp;gt;选项2&amp;lt;/li&amp;gt;  &amp;lt;li id = &amp;quot;item3&amp;quot;&amp;gt;选项3&amp;lt;/li&amp;gt;  &amp;lt;li id = &amp;quot;i">
+<meta property="og:description" content="一、Vue中组件extend和mixin的使用场景？  前者是用来扩展的，简单点来讲是来做加法。后者是混合，通俗来说就是用来做组合。 当你需要在某一个场景内要使用一个新功能，该新功能只是在某组件上添加一些新的逻辑新功能即可，选择用前者。 如果在某一场景，你如果需要的组件可以由已有的小组件构成可以考虑后者。  二、vue $mount()  Vue 的$mount()为手动挂载，在项目中可用于延时挂">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/16648252-7baf575499fc02d6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-04-13T15:44:45.484Z">
+<meta property="og:updated_time" content="2019-05-20T08:14:48.633Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="07-JS初试封装函数">
-<meta name="twitter:description" content="一、封装两个函数 相关内容：1234567&amp;lt;ul&amp;gt;  &amp;lt;li id = &amp;quot;item1&amp;quot;&amp;gt;选项1&amp;lt;/li&amp;gt;  &amp;lt;li id = &amp;quot;item2&amp;quot;&amp;gt;选项2&amp;lt;/li&amp;gt;  &amp;lt;li id = &amp;quot;item3&amp;quot;&amp;gt;选项3&amp;lt;/li&amp;gt;  &amp;lt;li id = &amp;quot;i">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/16648252-7baf575499fc02d6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="新手关于Vue的学习">
+<meta name="twitter:description" content="一、Vue中组件extend和mixin的使用场景？  前者是用来扩展的，简单点来讲是来做加法。后者是混合，通俗来说就是用来做组合。 当你需要在某一个场景内要使用一个新功能，该新功能只是在某组件上添加一些新的逻辑新功能即可，选择用前者。 如果在某一场景，你如果需要的组件可以由已有的小组件构成可以考虑后者。  二、vue $mount()  Vue 的$mount()为手动挂载，在项目中可用于延时挂">
 
 
 
@@ -123,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/13/07-JS初试封装函数/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/20/新手关于Vue的学习/">
 
 
 
 
 
-  <title>07-JS初试封装函数 | Brazen's blog</title>
+  <title>新手关于Vue的学习 | Brazen's blog</title>
   
 
 
@@ -298,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/13/07-JS初试封装函数/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/20/新手关于Vue的学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Brazen">
@@ -315,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">07-JS初试封装函数</h1>
+          <h1 class="post-title" itemprop="name headline">新手关于Vue的学习</h1>
         
 
         <div class="post-meta">
@@ -327,8 +325,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-13T23:43:52+08:00">
-                2019-04-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-20T16:14:16+08:00">
+                2019-05-20
               </time>
             
 
@@ -359,7 +357,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  844 字
+                  203 字
                 </span>
               
 
@@ -375,7 +373,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  4 分钟
+                  1 分钟
                 </span>
               
             </div>
@@ -396,39 +394,16 @@
       
 
       
-        <p><img src="https://upload-images.jianshu.io/upload_images/16648252-7baf575499fc02d6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt></p>
-<h2 id="一、封装两个函数"><a href="#一、封装两个函数" class="headerlink" title="一、封装两个函数"></a>一、封装两个函数</h2><hr>
-<p>相关内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;li id = &quot;item1&quot;&gt;选项1&lt;/li&gt;</span><br><span class="line">  &lt;li id = &quot;item2&quot;&gt;选项2&lt;/li&gt;</span><br><span class="line">  &lt;li id = &quot;item3&quot;&gt;选项3&lt;/li&gt;</span><br><span class="line">  &lt;li id = &quot;item4&quot;&gt;选项4&lt;/li&gt;</span><br><span class="line">  &lt;li id = &quot;item5&quot;&gt;选项5&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure></p>
-<h3 id="1-需求：获取到一个节点的兄弟姐妹，并放到一个伪数组里。"><a href="#1-需求：获取到一个节点的兄弟姐妹，并放到一个伪数组里。" class="headerlink" title="1. 需求：获取到一个节点的兄弟姐妹，并放到一个伪数组里。"></a>1. 需求：获取到一个节点的兄弟姐妹，并放到一个伪数组里。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">document.body.nextElementSibling</span><br><span class="line">//获取节点的弟弟</span><br><span class="line">document.body.previousElementSibling</span><br><span class="line">//获取节点的哥哥</span><br></pre></td></tr></table></figure>
-<p>初步思路：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var allChildren = item3.parentNode.chiledren //获取节点的所有兄弟姐妹</span><br><span class="line">var array = &#123;length:0&#125; //创建一个空对象</span><br><span class="line">for(let i = 0; i &lt; alllChildren.length; i++)&#123; //遍历</span><br><span class="line">  if(allChildren[i] !== item3)&#123;</span><br><span class="line">    array[array.length] = allChildren[i]</span><br><span class="line">    array.length += 1</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">console.log(array) //&#123;0:li#itme1, 1:li#itme2, 2:li#itme4, 3:li#itme5, length: 4&#125;</span><br></pre></td></tr></table></figure></p>
+        <h1 id="一、Vue中组件extend和mixin的使用场景？"><a href="#一、Vue中组件extend和mixin的使用场景？" class="headerlink" title="一、Vue中组件extend和mixin的使用场景？"></a>一、Vue中组件extend和mixin的使用场景？</h1><hr>
 <ul>
-<li>为什么<code>array[array.length]</code>中用<code>array.length</code>不用<code>i</code>，因为它中间有可能跳过一个，跳过之后序号就不一致</li>
-<li>为什么不用push？因为这是一个伪数组（伪数组就是哈希）。</li>
+<li>前者是用来扩展的，简单点来讲是来做加法。后者是混合，通俗来说就是用来做组合。</li>
+<li>当你需要在某一个场景内要使用一个新功能，该新功能只是在某组件上添加一些新的逻辑新功能即可，选择用前者。</li>
+<li>如果在某一场景，你如果需要的组件可以由已有的小组件构成可以考虑后者。</li>
 </ul>
-<p>封装函数：<code>function 起个好用又好听的名字(){}</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function getSiblings(node)&#123; //外部输入一个节点 API</span><br><span class="line">  var allChildren = node.parentNode.chiledren //获取节点的所有兄弟姐妹</span><br><span class="line">  var array = &#123;length:0&#125; //创建一个空对象</span><br><span class="line">  for(let i = 0; i &lt; alllChildren.length; i++)&#123; //遍历</span><br><span class="line">    if(allChildren[i] !== node)&#123;</span><br><span class="line">      array[array.length] = allChildren[i]</span><br><span class="line">      array.length += 1</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">retuen array</span><br><span class="line">&#125;</span><br><span class="line">console.log(getSiblings(item3))  //&#123;0:li#itme1, 1:li#itme2, 2:li#itme4, 3:li#itme5, length: 4&#125;</span><br><span class="line">```  </span><br><span class="line">### 2. 需求：给节点添加`class`，既能`add`也能`remove`。</span><br><span class="line">初步思路：</span><br></pre></td></tr></table></figure></p>
-<p>item3.classList.add(‘a’)<br>item3.classList.add(‘b’)<br>item3.classList.add(‘c’)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">var classes = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</span><br><span class="line">classes.forEach((value) =&gt; item3.classList.add(value))</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var classes = &#123;&apos;a&apos;:ture, &apos;b&apos;:false, &apos;c&apos;:ture&#125;</span><br><span class="line">var value = classes[key]</span><br><span class="line">for(let key in classes)&#123;</span><br><span class="line">  if(value)&#123;</span><br><span class="line">    item3.classList.add(key)</span><br><span class="line">  &#125;else&#123;</span><br><span class="line">    item3.classList.remove(key)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>封装函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function addClass(node,classes)&#123; //classes有使用者提供</span><br><span class="line">  var value = classes[key]</span><br><span class="line">  for(let key in classes)&#123;</span><br><span class="line">    if(value)&#123;</span><br><span class="line">      node.classList.add(key)</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      node.classList.remove(key)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">用法： addClass（item3, &#123;&apos;a&apos;:ture, &apos;b&apos;:false, &apos;c&apos;:ture&#125;）</span><br></pre></td></tr></table></figure></p>
-<p>优化代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function addClass(node,classes)&#123;</span><br><span class="line">  var value = classes[key]</span><br><span class="line">  for(let key in classes)&#123;</span><br><span class="line">    var methodName = value ? &apos;add&apos;:&apos;remove&apos;</span><br><span class="line">    node.Classlist[methodName](key)</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>优化守则：</p>
+<h1 id="二、vue-mount"><a href="#二、vue-mount" class="headerlink" title="二、vue $mount()"></a>二、vue $mount()</h1><hr>
 <ul>
-<li>如果出现类似的代码，就存在优化的可能。</li>
-</ul>
-<h3 id="3-需求：有什么办法让别人知道这两个API有关联性，因为这两个API都是在操作节点"><a href="#3-需求：有什么办法让别人知道这两个API有关联性，因为这两个API都是在操作节点" class="headerlink" title="3. 需求：有什么办法让别人知道这两个API有关联性，因为这两个API都是在操作节点"></a>3. 需求：有什么办法让别人知道这两个API有关联性，因为这两个API都是在操作节点</h3><p>命名空间：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">window.ffdom = &#123;&#125;</span><br><span class="line">ffdom.getSibilings = getSiblings</span><br><span class="line">ffdom.addClass = addClass</span><br><span class="line"></span><br><span class="line">ffdom.getSibilings(item3)</span><br><span class="line">ffdom.addClass（item3, &#123;&apos;a&apos;:ture, &apos;b&apos;:false, &apos;c&apos;:ture&#125;）</span><br></pre></td></tr></table></figure></p>
-<p>不命名空间的缺点：</p>
-<ul>
-<li>别人不知道你的库叫什么</li>
-<li>不知不觉把全局变量覆盖</li>
-</ul>
-<h3 id="4-需求：我想写成item-getSibilings"><a href="#4-需求：我想写成item-getSibilings" class="headerlink" title="4. 需求：我想写成item.getSibilings"></a>4. 需求：我想写成<code>item.getSibilings</code></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Node.prototype.getSibilings = function()&#123;</span><br><span class="line">  var allChildren = this.parentNode.chiledren </span><br><span class="line">  var array = &#123;length:0&#125; </span><br><span class="line">  for(let i = 0; i &lt; alllChildren.length; i++)&#123;</span><br><span class="line">    if(allChildren[i] !== this)&#123;</span><br><span class="line">      array[array.length] = allChildren[i]</span><br><span class="line">      array.length += 1</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  retuen array</span><br><span class="line">&#125;</span><br><span class="line">Node.prototype.addClass = function(classes)&#123;</span><br><span class="line">  var value = classes[key]</span><br><span class="line">  for(let key in classes)&#123;</span><br><span class="line">    var methodName = value ? &apos;add&apos;:&apos;remove&apos;</span><br><span class="line">    this.Classlist[methodName](key)</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br><span class="line">console.log(item3.getSiblings（）) //&#123;0:li#itme1, 1:li#itme2, 2:li#itme4, 3:li#itme5, length: 4&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>因为我们篡改了所有Node的公有属性，添加了一个getSiblings的方法。</li>
-<li><code>this</code>就是<code>.</code>前面的东西（这里就是item3）</li>
-<li><p>调用call </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">item3.getSiblings.call（item3）</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>我自己写一个更好的Node2版本，用新的版本去调用第一个版本</p>
-</li>
+<li>Vue 的<code>$mount()</code>为手动挂载，在项目中可用于延时挂载（例如在挂载之前要进行一些其他操作、判断等），之后要手动挂载上。new Vue时，el和$mount并没有本质上的不同。</li>
+<li>$mount方法是用来挂载我们的扩展的</li>
 </ul>
 
       
@@ -454,8 +429,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/06/JS的数据类型/" rel="next" title="JS的数据类型">
-                <i class="fa fa-chevron-left"></i> JS的数据类型
+              <a href="/2019/05/09/Vue重构有赞商城/" rel="next" title="Vue重构有赞商城">
+                <i class="fa fa-chevron-left"></i> Vue重构有赞商城
               </a>
             
           </div>
@@ -463,10 +438,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/14/08-模拟jQuery实现两个需求/" rel="prev" title="08-模拟jQuery实现两个需求">
-                08-模拟jQuery实现两个需求 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -614,7 +585,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、封装两个函数"><span class="nav-number">1.</span> <span class="nav-text">一、封装两个函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-需求：获取到一个节点的兄弟姐妹，并放到一个伪数组里。"><span class="nav-number">1.1.</span> <span class="nav-text">1. 需求：获取到一个节点的兄弟姐妹，并放到一个伪数组里。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-需求：有什么办法让别人知道这两个API有关联性，因为这两个API都是在操作节点"><span class="nav-number">1.2.</span> <span class="nav-text">3. 需求：有什么办法让别人知道这两个API有关联性，因为这两个API都是在操作节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-需求：我想写成item-getSibilings"><span class="nav-number">1.3.</span> <span class="nav-text">4. 需求：我想写成item.getSibilings</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、Vue中组件extend和mixin的使用场景？"><span class="nav-number">1.</span> <span class="nav-text">一、Vue中组件extend和mixin的使用场景？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、vue-mount"><span class="nav-number">2.</span> <span class="nav-text">二、vue $mount()</span></a></li></ol></div>
             
 
           </div>
