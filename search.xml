@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[13-Session、LocalStorage、Cache-Control]]></title>
+    <url>%2F2019%2F06%2F08%2F13-Session%E3%80%81LocalStorage%E3%80%81Cache-Control%2F</url>
+    <content type="text"><![CDATA[一、使用Session保存信息（Cookie大概在4k） Session可以解决Cookie被用户随意篡改的问题。 在server.js里面声明一个对象 1234567let sessiongs = &#123;&#125;····if(found)&#123; sessionId = Math.random()*1000 sessions[sessionId] = &#123;sign_up_email:email&#125; setHeader(&apos;Set-Cookie&apos;,`sessionId=$&#123;sessionId&#125;`)&#125; 因为sessions是一个内存，一刷新就没了 12345let mySession = sessions[hash.sessionId]let emailif(mySession)&#123; email = mySession.sign_in_email&#125; 什么是Session 服务器通过Cookie给用户一个sessionId,然后sessionId对应服务器一小块内存，每次用户访问服务器时候，服务器就通过sessionId去读取对应的Session,然后知道用户的隐私信息。 二、localStorage简介2.1 什么是localStorage 这是HTML5 提供的新的API(实质是一个哈希表，浏览器上的) 三、localStorage的用法 localStorage最典型的用法，是否提醒过用户 1234567&lt;script&gt; let already = window.localStorage.getItem(&apos;已经提示过用户&apos;) if(!already)&#123; window.localStorage.setItem(&apos;已经提示过用户&apos;,true) alert(&apos;1&apos;) &#125;&lt;/script&gt; 检验localStorage最大存储 localStorage的特点 SessionStroage的特点 请问Cookie跟Session有什么关系？ 一般来说，Session是基于Cookie实现的，因为Session必须将SessionId放到Cookie里面，然后再发给客户端，没有这个SessionId，就没有Session。 请问Cookie跟localStroage的区别？ Cookie每次请求的时候都会带给服务器，localStroage不会，因为localStroage跟HTTP无关 四、HTTP缓存4.1 Cache-Control 如何让我们的JS，CSS请求加快 1response.setHeader(&apos;Cache-Control&apos;,&apos;max-age=30&apos;) 也就是说在30秒内，不要再次请求。 4.2 如何更新缓存 为什么首页不能设置Cache-Control 如果所有东西都是缓存一天或其他时间，那么用户在这段时间能就没法获取最新的网页。 只有相同的URL才会利用之前缓存，只要修改URL即可 Cache-Control的功能 Cache-Control可以让浏览器在一段时间内，不访问服务器，直接 用本地的硬盘或内存作为响应，这样速度就非常快。更新怎么办 只要在入口处（HTML），把URL修改一下。 4.3 Expiers Expiers与Cache-Control的区别 一个是什么时候过期，一个是多久过期。 什么时候过期指的是本地时间，如果用户的时间错乱了，就乱了。 两个都设置，Expiers会被Cache-Control覆盖 4.3 ETag 每次都会发起请求，然后对比md5，If-None-Match是否匹配]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[新手关于Vue的学习]]></title>
     <url>%2F2019%2F05%2F20%2F%E6%96%B0%E6%89%8B%E5%85%B3%E4%BA%8EVue%E7%9A%84%E5%AD%A6%E4%B9%A0%2F</url>
     <content type="text"><![CDATA[一、Vue中组件extend和mixin的使用场景？ 前者是用来扩展的，简单点来讲是来做加法。后者是混合，通俗来说就是用来做组合。 当你需要在某一个场景内要使用一个新功能，该新功能只是在某组件上添加一些新的逻辑新功能即可，选择用前者。 如果在某一场景，你如果需要的组件可以由已有的小组件构成可以考虑后者。 二、vue $mount() Vue 的$mount()为手动挂载，在项目中可用于延时挂载（例如在挂载之前要进行一些其他操作、判断等），之后要手动挂载上。new Vue时，el和$mount并没有本质上的不同。 $mount方法是用来挂载我们的扩展的]]></content>
